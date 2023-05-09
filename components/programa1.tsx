@@ -24,6 +24,7 @@ const Programa1 = ({ data, stateProps,springProps }: Props) => {
     <animated.div className="flex flex-row pb-10" style={springProps.style}>
       {data.map((ele) => (
         <div
+          key={ele.name}
           onClick={() => change(ele.name)}
           className="bg-white shadow-lg rounded-lg p-6 sm:w-1/3 mx-5 sm:h-44"
         >

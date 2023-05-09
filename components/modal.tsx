@@ -4,14 +4,13 @@ import { dataStore } from "@/types/store";
 import ButtonCard from "./buttonCard";
 import Optioner from "./optioner";
 import DummyFor from "./dummyForm";
-import {Arrow} from "@heroicons//react/outline"
 import { useTransition,config, animated, useSpringRef,AnimatedProps } from "@react-spring/web";
 
 type Props = {
   componentName:string
   componentData:dataStore|any
   stateProps:{pos:number,state:number,setState:((index:number,bool:boolean)=>void)}
-  componentsStates:any[]
+  componentsStates:[string,string,string]
   funFinal:any
   
 }
@@ -31,7 +30,7 @@ const Modal = ({componentName,componentData,stateProps,componentsStates,funFinal
       funFinal[0](stateProps.pos-1,name,newValue)
   }
 
-  function getByLevels(data:any,components:[ JSX.Element,JSX.Element,JSX.Element]){
+  function getByLevels(data:any,components:[ typeof Programa1,typeof Optioner,typeof Optioner]){
     const finalResults:((props: AnimatedProps<{ style: CSSProperties }>) => ReactElement)[] = []
     const First = components[0]
     const Two = components[1]
