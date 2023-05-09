@@ -1,0 +1,51 @@
+
+{"data":[{
+  "type":"Programa1",
+  "name":"Pregrado",
+  "childs":[
+    {"type":"facultad:",
+      "name":"Ciencias y Humanidades",
+      "childs":[
+        {"type": "Programa2",
+          "name": "Educacion Inicial Primaria"
+        }
+      ]
+    },
+  {"type":"facultad",
+      "name":"Ciencias de la Salud",
+      "childs":[
+        {"type": "Programa2",
+          "name": "Enfermeria"
+        },
+ {"type": "Programa2",
+          "name": "Obstetricia"
+        }
+      ]
+    }
+  ]
+},
+{
+  "type":"Programa1",
+  "name":"PostGrado",
+  "childs":[
+    {"type":"facultad:",
+      "name":"Escuela de PostGrado",
+      "childs":[
+        {"type": "Programa2",
+          "name": "Maestria en Derecho Constitucional"
+        }
+      ]
+    },
+  {"type":"facultad",
+      "name":"Ciencias de la Salud",
+      "childs":[
+        {"type": "Programa2",
+          "name": "Admininstracion"
+        }
+      ]
+    }
+  ]
+}
+]
+}
+
