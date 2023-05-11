@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { animated } from "@react-spring/web";
+import "../styles/myStyle.module.css"
 type Props = {
   data: {
     type: string;
@@ -22,6 +23,22 @@ import { Menu, MenuProps, Transition } from "@headlessui/react";
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
+function divMod(a:number, b:number) {
+  return [Math.trunc(a / b), a % b];
+}
+function getOrderData(data:{type:string,name:string}[]){
+  const finalData = []
+  const [q,r] = divMod(data.length,5)
+  let acum = 0
+  for (const i of Array.from(Array(q).keys())) {
+   finalData.push(data.slice(acum,acum+5))
+    acum+=5
+  }  
+  if(r !== 0 ){
+  finalData.push(data.slice(acum,acum+r))
+  }
+  return finalData
+}
 
 const Optioner = ({ data, stateProps ,springProps}: Props) => {
   // let ga = <Menu>haa</Menu>
@@ -39,33 +56,36 @@ const Optioner = ({ data, stateProps ,springProps}: Props) => {
     console.log(name)
   }
   console.log(data)
+  const newData = getOrderData(data)
   return (
-    <animated.div style={springProps.style}>
-    <Menu as="div" className="relative inline-block text-left">
+    <animated.div style={springProps.style} className="w-full">
+    <Menu as="div" className="relative text-left w-full">
       {({ open }) => {
         return (
           <div className="">
-            <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-              {data[0].type}
+            <Menu.Button className="inline-flex w-max ml-0 justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+              {newData[0][0].type}
             </Menu.Button>
-            <div>
+            <div className="flex justify-start">
               {/*
                 Using the `static` prop, the `Menu.Items` are always
                 rendered and the `open` state is ignored.
               */}
-              { (
+              {newData.map((tab)=>(
                 <Menu.Items
+                    as="div"
                   static
-                  className="absolute z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  className="z-10 menuItems overflow-auto mt-2 mx-2 sw:w-max sw:h-3 divide-y divide-gray-300 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                    style={{height:"fit-content"}}
                 >
-                  {data.map((ele) => (
+                  {tab.map((ele) => (
                     <Menu.Item as="div" key={ele.name} onClick={()=>changeState(ele.name)}>
                       {({ active }) => (
                   <a
                   className={ele.name == stateProps.state?classNames(
-                    'bg-gray-400 text-gray-900', active ? 'text-gray-700':'text-gray-100',
-                    'block px-4 py-2 text-sm'
-                  ):'bg-gray-100 text-gray-900 block px-4 py-2 text-sm'}
+                    'bg-gray-300 text-gray-900', active ? 'text-gray-700':'text-gray-100',
+                    'block px-2 py-2 text-sm  cursor-pointer'
+                  ):'bg-gray-100 text-gray-900 block px-2 py-2 text-sm cursor-pointer'}
                 >
                           {ele.name}
                 </a>
@@ -74,7 +94,7 @@ const Optioner = ({ data, stateProps ,springProps}: Props) => {
                     </Menu.Item>
                   ))}
                 </Menu.Items>
-              )}
+              ))}
             </div>
           </div>
         );

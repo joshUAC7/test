@@ -26,7 +26,7 @@ const Programa1 = ({ data, stateProps,springProps }: Props) => {
         <div
           key={ele.name}
           onClick={() => change(ele.name)}
-          className="bg-white shadow-lg rounded-lg p-6 sm:w-1/3 mx-5 sm:h-44"
+          className="bg-white shadow-lg rounded-lg p-6 sm:w-1/3 mx-5 sm:h-44 cursor-pointer"
         >
           <h2 className="text-lg font-semibold mb-2">{ele.name}</h2>
           <p className="text-gray-600">Contenido de {ele.name}</p>

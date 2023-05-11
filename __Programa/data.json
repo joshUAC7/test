@@ -1,51 +1,315 @@
-
-{"data":[{
-  "type":"Programa1",
-  "name":"Pregrado",
-  "childs":[
-    {"type":"facultad:",
-      "name":"Ciencias y Humanidades",
-      "childs":[
-        {"type": "Programa2",
-          "name": "Educacion Inicial Primaria"
-        }
-      ]
-    },
-  {"type":"facultad",
-      "name":"Ciencias de la Salud",
-      "childs":[
-        {"type": "Programa2",
-          "name": "Enfermeria"
-        },
- {"type": "Programa2",
-          "name": "Obstetricia"
-        }
-      ]
-    }
-  ]
-},
 {
-  "type":"Programa1",
-  "name":"PostGrado",
-  "childs":[
-    {"type":"facultad:",
-      "name":"Escuela de PostGrado",
-      "childs":[
-        {"type": "Programa2",
-          "name": "Maestria en Derecho Constitucional"
+  "data": [
+    {
+      "type": "Programa1",
+      "name": "Pregrado",
+      "childs": [
+        {
+          "type": "facultad:",
+          "name": "Ciencias Económicas y Administrativas y Contables",
+          "childs": [
+            {
+              "type": "Programa2",
+              "name": "Administracion"
+            },
+            {
+              "type": "Programa2",
+              "name": "Administracion de Negocios Internacionales"
+            },
+            {
+              "type": "Programa2",
+              "name": "Contabilidad"
+            },
+            {
+              "type": "Programa2",
+              "name": "Economia "
+            },
+            {
+              "type": "Programa2",
+              "name": "Marketing"
+            },
+            {
+              "type": "Programa2",
+              "name": "Finanzas"
+            }
+          ]
+        },
+        {
+          "type": "facultad:",
+          "name": "Derecho y Ciencia politica",
+          "childs": [
+            {
+              "type": "Programa2",
+              "name": "Derecho"
+            }
+          ]
+        },
+        {
+          "type": "facultad:",
+          "name": "Ciencias y Humanidades",
+          "childs": [
+            {
+              "type": "Programa2",
+              "name": "Educacion Especialidad Inicial-Primaria"
+            },
+            {
+              "type": "Programa2",
+              "name": "Educacion Especialidad Educacion Fisica"
+            },
+            {
+              "type": "Programa2",
+              "name": "Educacion Especialidad Educacion Especial"
+            },
+            {
+              "type": "Programa2",
+              "name": "Turismo"
+            }
+          ]
+        },
+        {
+          "type": "facultad",
+          "name": "Ciencias de la Salud",
+          "childs": [
+            {
+              "type": "Programa2",
+              "name": "Enfermeria"
+            },
+            {
+              "type": "Programa2",
+              "name": "Estomatologia"
+            },
+            {
+              "type": "Programa2",
+              "name": "Medicina Humana"
+            },
+            {
+              "type": "Programa2",
+              "name": "Obstetricia"
+            },
+            {
+              "type": "Programa2",
+              "name": "Psicología"
+            },
+            {
+              "type": "Programa2",
+              "name": "Tecnología Medica - Terapia Fisica y Rehabilitacion"
+            },
+            {
+              "type": "Programa2",
+              "name": "Tecnologia Medica Terapia del Lenguaje"
+            }
+          ]
+        },
+        {
+          "type": "facultad",
+          "name": "Ingenieria y Arquitectura",
+          "childs": [
+            {
+              "type": "Programa2",
+              "name": "Arquitectura"
+            },
+            {
+              "type": "Programa2",
+              "name": "Ingenieria Ambiental"
+            },
+            {
+              "type": "Programa2",
+              "name": "Ingenieria Civil"
+            },
+            {
+              "type": "Programa2",
+              "name": "Ingenieria de Sistemas"
+            },
+            {
+              "type": "Programa2",
+              "name": "Ing Industrial"
+            }
+          ]
         }
       ]
     },
-  {"type":"facultad",
-      "name":"Ciencias de la Salud",
-      "childs":[
-        {"type": "Programa2",
-          "name": "Admininstracion"
+    {
+      "type": "programa1",
+      "name": "Segunda Especialidad",
+      "childs": [
+        {
+          "type": "facultad",
+          "name": "Ciencias de la Salud: Segunda Especialidad",
+          "childs": [
+            {
+              "type": "Programa2",
+              "name": "Enfermería: Cuidado enfermero en emergencias y desastres"
+            },
+            {
+              "type": "Programa2",
+              "name": "Enfermería: Cuidado enfermero en paciente crítico adulto (UCI)"
+            },
+            {
+              "type": "Programa2",
+              "name": "Enfermería: Cuidado enfermero en salud del adulto y/o adulto mayor (geriatria y/o gerontología)"
+            },
+            {
+              "type": "Programa2",
+              "name": "Enfermería en centro Quirurgico"
+            },
+            {
+              "type": "Programa2",
+              "name": "Enfermería: Cuidado materno infantil con mención en neonatología"
+            },
+            {
+              "type": "Programa2",
+              "name": "Enfermería: Cuidado materno infantil con mención en pediatria"
+            },
+            {
+              "type": "Programa2",
+              "name": "Estomatología: Ortodoncia y ortopedia funcional de los maxilares"
+            },
+            {
+              "type": "Programa2",
+              "name": "Estomatología: Rehabilitación oral"
+            },
+            {
+              "type": "Programa2",
+              "name": "Estomatología: Periodoncia e implantología"
+            },
+            {
+              "type": "Programa2",
+              "name": "Obtetricia: Estimulación prenatal y psicoprofilaxis obstetrica"
+            },
+            {
+              "type": "Programa2",
+              "name": "Obtetricia: Estimulación prenatal y psicoprofilaxis obstetrica"
+            },
+            {
+              "type": "Programa2",
+              "name": "Obtetricia: Ecografia obstetrica y monitoreo fetal"
+            }
+          ]
+        },
+        {
+          "type": "facultad",
+          "name": "Ciencias y Humanidades: Segunda Especialidad",
+          "childs": [
+            {
+              "type": "Programa2",
+              "name": "Turismo: Gastronomia Turistica Internacional"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Programa1",
+      "name": "PostGrado",
+      "childs": [
+        {
+          "type": "facultad:",
+          "name": "Escuela de PostGrado",
+          "childs": [
+            {
+              "type": "Programa2",
+              "name": "Maestria en Docencia Universitaria"
+            },
+            {
+              "type": "Programa2",
+              "name": "Maestria en Derecho Constitucional"
+            },
+            {
+              "type": "Programa2",
+              "name": "Maestria en Derecho Constitucional"
+            },
+            {
+              "type": "Programa2",
+              "name": "Maestria en Administracion de Negocios"
+            },
+            {
+              "type": "Programa2",
+              "name": "Maestria en Derecho Civil y Comercial"
+            },
+            {
+              "type": "Programa2",
+              "name": "Maestria en Ciencias Estomatológicas"
+            },
+            {
+              "type": "Programa2",
+              "name": "Maestria en Derecho del Trabajo y de la Seguridad Social"
+            },
+            {
+              "type": "Programa2",
+              "name": "Maestria en Ingenieria de Sistemas con mencion en ingenieria de Software"
+            },
+            {
+              "type": "Programa2",
+              "name": "Maestria en Seguridad Industrial y Medio Ambiente"
+            },
+            {
+              "type": "Programa2",
+              "name": "Maestria en Derecho Registral y Notarial"
+            },
+            {
+              "type": "Programa2",
+              "name": "Maestria en Contabilidad con mencion en auditoria y Control Interno "
+            },
+            {
+              "type": "Programa2",
+              "name": "Maestria en Derecho Constitucional"
+            },
+            {
+              "type": "Programa2",
+              "name": "Maestria en Estadistica e Investigacion Cientifica"
+            },
+            {
+              "type": "Programa2",
+              "name": "Maestria en Ingenieria Civil con mencion en Transporte"
+            },
+            {
+              "type": "Programa2",
+              "name": "Maestria en Ingenieria Civil con mencion en Hidraulica y Ambiental"
+            },
+            {
+              "type": "Programa2",
+              "name": "Maestria en Ingenieria Civil con mencion en Estructuras"
+            },
+            {
+              "type": "Programa2",
+              "name": "Maestria en Salud Comunitaria"
+            },
+            {
+              "type": "Programa2",
+              "name": "Maestria en Enfermeria"
+            },
+            {
+              "type": "Programa2",
+              "name": "Doctorado en Ciencias de la Educacion"
+            },
+            {
+              "type": "Programa2",
+              "name": "Doctorado en Derecho"
+            },
+            {
+              "type": "Programa2",
+              "name": "Doctorado en Ciencias de la Salud"
+            },
+            {
+              "type": "Programa2",
+              "name": "Doctorado en Contabilidad"
+            },
+            {
+              "type": "Programa2",
+              "name": "Doctorado en Medio Ambiente y Desarrollo Sostenible"
+            },
+            {
+              "type": "Programa2",
+              "name": "Doctorado en Administracion"
+            },
+            {
+              "type": "Programa2",
+              "name": "Doctorado en Psicología"
+            }
+          ]
         }
       ]
     }
   ]
-}
-]
 }
 

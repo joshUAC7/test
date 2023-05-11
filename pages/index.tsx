@@ -106,8 +106,8 @@ export default function Home({ posts,programa }: Props) {
     const limits = [0].concat(actualData.map(ele=>ele.evaluadores.length))
     if(idx !== -1){
       if(modalIdx[idx+1] < limits[idx+1] -1){
-      timer = setTimeout(()=>{changeIdxMod(idx+1,true)},300)
-      // changeIdxMod(idx+1,true)
+      // timer = setTimeout(()=>{changeIdxMod(idx+1,true)},300)
+      changeIdxMod(idx+1,true)
       }
     }
 
@@ -183,7 +183,7 @@ export default function Home({ posts,programa }: Props) {
     <>
 <h1 className="text-4xl font-extrabold dark:text-white pt-10 pl-10">INSTRUMENTO DE EVALUACIÓN DE PLANES CURRICULARES DE LA UNIVERSIDAD ANDINA DEL CUSCO</h1>
     <main
-      className={`flex justify-center items-center p-12 ${inter.className}`}
+      className={`relative flex justify-center items-center p-12 ${inter.className}`}
     >
       <button onClick={min} className="bg-gray-400 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-l-lg h-20">
 
@@ -192,6 +192,7 @@ export default function Home({ posts,programa }: Props) {
 </svg>
 </button>
 
+        <p className="absolute top-20 pt-4  z-20 text-sm text-gray-400">{`${idx+1}-${allModals.length}`}</p>
       {allModals[idx]}
       <button  onClick={add} className="bg-gray-400 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-r-lg h-20">
 

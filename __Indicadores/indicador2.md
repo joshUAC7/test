@@ -1,8 +1,7 @@
-# Propósitos, políticas y lineamientos institucionales
+# Bases legales
+Los documentos normativos del Plan Curricular regulan la prestación del servicio educativo y sirven de base para el funcionamiento de la EP/P.
 
-Se articula con la misión y visión institucional para la vinculación con las políticas y lineamientos del programa.
-
-## Evaluadores
+## Evaluadores 
 * Pertinente
-* Congruencia
-* Suficiencia
+
+  

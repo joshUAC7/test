@@ -48,7 +48,6 @@ const Modal = ({componentName,componentData,stateProps,componentsStates,funFinal
   const transRef = useSpringRef()
 const transitions = useTransition(stateProps.state,{
     ref:transRef,
-    keys:null,
   from: { opacity: 0  },
     enter: { opacity: 1},
  });
@@ -78,7 +77,7 @@ console.log(transitions)
   <div className="inset-0 z-10 overflow-y-auto">
     <div className="flex sm:max-h-full items-center justify-between p-4 text-center sm:items-center sm:p-0">
       
-      <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:max-w-screen-lg sm:w-[50rem] sm:h-[25rem]" >
+      <div className="transform rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:max-w-screen-lg sm:w-[53rem] sm:h-[28rem]" >
         <div className="bg-gray-50 px-4  pt-5  min-h-[50%]">
           <div className="pt-4">
             <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
@@ -87,7 +86,7 @@ console.log(transitions)
                 <p className="text-base text-black ">{stateProps.state + 1}/{myComponents.length}</p>
               </div>
                   <div className="flex flex-col justify-between">
-              {componentName == "evaluadores" && <p className="text-base sm:w-2/3 sm:h-28 border-b border-gray-900/10" >{componentData.message}</p>}
+              {componentName == "evaluadores" && <p className="text-base sm:w-10/12 sm:h-28 border-b border-gray-900/10" >{componentData.message}</p>}
               <div className="flex flex-row">
                       <div className="w-0"></div>
                   {/* {myComponents[stateProps.state]} */}
