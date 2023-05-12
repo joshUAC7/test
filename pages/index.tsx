@@ -100,25 +100,30 @@ export default function Home({ posts,programa }: Props) {
   // Si no se encontró ningún cambio
   return -1;
 }
-  useWatchStateChange((depIndex,prevVal,currentVal)=>{
-    const idx = findChangedPropertyIndex(prevVal,currentVal)
-    let timer:NodeJS.Timeout | number | null = null
-    const limits = [0].concat(actualData.map(ele=>ele.evaluadores.length))
-    if(idx !== -1){
-      if(modalIdx[idx+1] < limits[idx+1] -1){
-      // timer = setTimeout(()=>{changeIdxMod(idx+1,true)},300)
-      changeIdxMod(idx+1,true)
-      }
-    }
-
-    return ()=>clearTimeout(timer!!)
-  },[actualData])
+  
 
   const [idx, setIdx] = useState(0);
   const [modalIdx, setModalIdx] = useState<number[]>(
     Array(actualData.length + 1).fill(0)
   );
 
+useWatchStateChange((depIndex,prevVal,currentVal)=>{
+    const idx = findChangedPropertyIndex(prevVal,currentVal)
+    let timer:NodeJS.Timeout | number | null = null
+    const limits = [0].concat(actualData.map(ele=>ele.evaluadores.length))
+    if(idx !== -1){
+      if(modalIdx[idx+1] < limits[idx+1] -1){
+      timer = setTimeout(()=>{changeIdxMod(idx+1,true)},200)
+      // changeIdxMod(idx+1,true)
+      }else{
+        if(modalIdx[idx+1] == limits[idx+1]-1){
+          setIdx(prev=>prev+1)
+        }
+      }
+    }
+
+    return ()=>clearTimeout(timer!!)
+  },[actualData])
   const add = () => {
     setIdx((prev) => (prev < allModals.length - 1 ? prev + 1 : prev));
   };
