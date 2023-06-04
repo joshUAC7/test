@@ -7,7 +7,8 @@ import GoogleProvider from "next-auth/providers/google"
 
 type TokenResponse=
 {
-  access_token?:string
+  access?:string
+  refresh?:string
 }
 export const authOptions:AuthOptions = {
 
@@ -23,12 +24,14 @@ export const authOptions:AuthOptions = {
         const {access_token,id_token} = account
 
         try{
-          const response = await axios.post<TokenResponse>("http://192.168.1.10:3001/api/social/login/google/",{
+          const response = await axios.post<TokenResponse>(process.env.DJANGOURL+"/api/social/login/google/",{
             access_token: id_token,
           })
 
           const tokken = response.data
-          user.accessToken = tokken.access_token
+          user.accessToken = tokken.access
+          console.log(user)
+          console.log("GAAA")
           return true
         }catch(error){
           return false
@@ -44,8 +47,10 @@ export const authOptions:AuthOptions = {
       }
       return token
     },
-    async session({session,user}){
-      session.user.accessToken = user.accessToken
+    async session({session,user,token}){
+      console.log(session)
+      console.log(token)
+      session.user.accessToken = token.accessToken
       return session
     }
   }

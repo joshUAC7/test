@@ -19,6 +19,7 @@ const inter = Inter({ subsets: ["latin"] });
 type Props = {
   posts: any;
   programa: any;
+  DJANGOURL:string
 };
 
 function convertData(data: any[]) {
@@ -34,8 +35,7 @@ function convertData(data: any[]) {
 }
 
 function convertDataMain(data: any[]) {}
-export default function Home({ posts, programa }: Props) {
-
+export default function Home({ posts, programa,DJANGOURL }: Props) {
   const router = useRouter()
   const {data,status} = useSession()
   if(status == "unauthenticated"){
@@ -222,15 +222,52 @@ export default function Home({ posts, programa }: Props) {
   // const allModals = myModals
   console.log(idx);
 
-  async function getInstrumento(){
+function downloadFile(url:string, fileName:string) {
+  fetch(url, { method: 'get', mode: 'no-cors', referrerPolicy: 'no-referrer' })
+    .then(res => res.blob())
+    .then(res => {
+      const aElement = document.createElement('a');
+      aElement.setAttribute('download', fileName);
+      const href = URL.createObjectURL(res);
+      aElement.href = href;
+      aElement.setAttribute('target', '_blank');
+      aElement.click();
+      URL.revokeObjectURL(href);
+    });
+};
+ async function getInstrumento(){
     try{
-
-    
+      const response = await axios.get(DJANGOURL+"/api/instrumento/",{
+        responseType:'blob'
+      })
+        const a = document.createElement('a');
+        a.href = window.URL.createObjectURL(response.data);
+        a.download = "instrumento.pdf";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
     }
     catch(err)
   {
 
     }
+  }
+
+  async function getReporte(){
+    try{
+        const ga = await axios.post(DJANGOURL+"/api/reporte/",{
+        programa1,
+        facultad,
+        programa2,
+        resoluciones,
+        actualData
+      })
+      console.log(ga)
+    }
+    catch(err){
+
+    }
+
   }
   return (
     <>
@@ -315,7 +352,7 @@ export default function Home({ posts, programa }: Props) {
                   <button
                     type="button"
                     className="mt-3 inline-flex w-full justify-center rounded-md bg-green-300 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                    onClick={() => setOpen(false)}
+                    onClick={getReporte}
                     ref={cancelButtonRef}
                   >
 <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
@@ -324,6 +361,7 @@ export default function Home({ posts, programa }: Props) {
                   <button
                     type="button"
                     className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                    onClick={getInstrumento}
                     ref={cancelButtonRef}
                   >
 <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
@@ -373,12 +411,12 @@ export async function getStaticProps({ params }: Params) {
     };
   });
   const programa = getMainData();
-  console.log(programa);
 
   return {
     props: {
       posts: finalPosts,
       programa: programa,
+      DJANGOURL:process.env.DJANGOURL
     },
   };
 }

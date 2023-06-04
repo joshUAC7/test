@@ -8,7 +8,7 @@ interface User {
 
   interface Session{
     user: {
-      accessToken?: string
+      accessToken?: string | unknown
     } & DefaultSession["user"]
   }
 }

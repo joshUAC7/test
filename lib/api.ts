@@ -44,7 +44,6 @@ export function getAllIndicators(){
 
 export function getMainData(){
  const fileContent = fs.readFileSync(join(mainDataDirectory,'data.json'),'utf-8')
-  console.log(fileContent)
   const fileConvert = JSON.parse(fileContent)
   return fileConvert
 }
