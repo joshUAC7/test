@@ -6,3 +6,7 @@ Contiene la secuencia según el PEA correspondiente al plan curricular y con la 
 * Pertinente
 * Congruencia
 * Suficiencia
+
+
+## Nro
+14.0

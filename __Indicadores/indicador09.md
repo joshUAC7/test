@@ -6,3 +6,7 @@ Muestra el conjunto de asignaturas de forma secuencial, jerárquica y organizati
 * Pertinente
 * Congruencia
 * Suficiencia
+
+
+## Nro
+8.0

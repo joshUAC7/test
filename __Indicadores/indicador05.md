@@ -6,3 +6,7 @@ Concreta en términos pedagógicos el paradigma educativo que la institución pr
 * Pertinente
 * Congruencia
 * Suficiencia
+
+
+## Nro
+4.0

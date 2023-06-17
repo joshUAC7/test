@@ -1,6 +1,10 @@
-# Integración de estudiantes con discapacidad (habilidades diferentes) (Riesgo Social)
+# Seguimiento al desempeño académico a estudiantes en Riesgo Psicologico
 
-Describe el proceso de seguimiento a estudiantes con discapacidad, que en sustento a su condición se cataloga en riesgo social y que podría generar riesgo académico como psicológico, por tanto, se propone acompañamientos que permitan una inclusión favorable. para estudiantes con habilidades diferentes
+Describe el proceso de seguimiento a estudiantes en riesgo psicológico como. problemas de inadaptación o de conducta, entre otros aspectos que interfiere el rendimiento académico y ponen en riesgo su integridad
 
 ## Evaluadores
 * Pertinente
+
+## Nro
+18.2
+

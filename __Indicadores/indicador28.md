@@ -1,6 +1,10 @@
-# Infraestructura física y Tecnológica
+# Plana docente
 
-La Escuela Profesional describe de forma específica la infraestructura física y tecnológica para desarrollar el proceso de enseñanza aprendizaje, en función al número de estudiantes y según la adecuación a las áreas de formación.
+Describe a la plana docente, clasificados por áreas de conocimiento profesional, título profesional, grados académicos, condición laboral y otros
 
 ## Evaluadores
-* Suficiencia
+* Pertinente
+
+
+## Nro
+19.4

@@ -1,6 +1,10 @@
-# Plana docente
+# Selección, capacitación y evaluación docente
 
-Describe a la plana docente, clasificados por áreas de conocimiento profesional, título profesional, grados académicos, condición laboral y otros
+Se describe las normas y mecanismos de selección docente, capacitaciones y evaluación del desempeño docente y reconocimiento a la labor docente, en base al desarrollo de la disciplina y el avance de la tecnología
 
 ## Evaluadores
-* Pertinente
+* Suficiencia
+
+
+## Nro
+19.3

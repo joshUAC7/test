@@ -1,6 +1,11 @@
-# Perfil del docente universitario
+# Funciones del Director de EP/P
 
-Se describe el perfil de docente, articulado a las necesidades del ámbito educativo superior e institucional, según modalidades de servicio educativo
+Se describe las funciones específicas del director o coordinador de EP/P y si se encuentran alienadas al MOF
 
 ## Evaluadores
 * Suficiencia
+
+
+## Nro
+19.1
+

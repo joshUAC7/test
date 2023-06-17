@@ -6,3 +6,7 @@ Se articulan a las competencias generales y específicas para la inserción labo
 * Pertinente
 * Congruencia
 * Suficiencia
+
+
+## Nro
+6.0

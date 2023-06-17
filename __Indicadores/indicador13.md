@@ -4,3 +4,7 @@ Reconoce como válida la incorporación de asignaturas del plan de estudios ante
 
 ## Evaluadores
 * Congruencia
+
+
+## Nro
+12.0

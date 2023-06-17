@@ -5,3 +5,7 @@ Declara el nombre, categoría, créditos, ciclos, prerrequisitos y horas teóric
 ## Evaluadores
 * Pertinente
 * Suficiencia
+
+
+## Nro
+11.0

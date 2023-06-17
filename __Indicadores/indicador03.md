@@ -6,3 +6,7 @@ Se articula con la misión y visión institucional para la vinculación con las 
 * Pertinente
 * Congruencia
 * Suficiencia
+
+
+## Nro
+2.2

@@ -1,6 +1,10 @@
-# Funciones del Director de EP/P
+# Seguimiento a estudiantes Becarios
 
-Se describe las funciones específicas del director o coordinador de EP/P y si se encuentran alienadas al MOF
+Describe el proceso de seguimiento a estudiantes becarios para garantizar su éxito académico y en consecuencia su inclusión y ascenso vertical
 
 ## Evaluadores
-* Suficiencia
+* Pertinente
+
+
+## Nro
+18.4

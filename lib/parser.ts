@@ -75,6 +75,40 @@ while ((event = walker.next())) {
 }
     return results
 }
+
+visitorGetNro(nodo:Node){
+var walker = nodo.walker();
+let event, node;
+  let flag1 = false
+  // let flag2 = false
+let results:string[] = []
+while ((event = walker.next())) {
+  node = event.node;
+
+
+  switch( node.type){
+      case "text":{
+        if(node.parent?.type == "paragraph"){
+          if(flag1){
+              results.push(node.literal!!)
+          }
+        }
+      }
+      break
+      case "paragraph":{
+        if(node.parent?.parent?.type == "heading" && node.parent?.parent?.level == 2){
+          if(node.parent.parent.firstChild?.literal?.trim() == "Nro"){
+            flag1 = true
+          }else{
+            flag1 = false
+          }
+        }
+      }
+      break
+    }
+}
+    return results
+}
   
  visitorGetContent(nodo:Node){
 var walker = nodo.walker();

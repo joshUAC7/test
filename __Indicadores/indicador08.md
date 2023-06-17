@@ -6,3 +6,7 @@ Describe el perfil de ingreso y de egreso acorde a las competencias generales y 
 * Pertinente
 * Congruencia
 * Suficiencia
+
+
+## Nro
+7.0
