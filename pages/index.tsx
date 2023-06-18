@@ -264,7 +264,7 @@ function downloadFile(url:string, fileName:string) {
 
   }
   return (
-    status == "unauthenticated" ? "LOADING":
+    status == "unauthenticated" ? "LOOOADING":
     <>
 
       <h1 className="text-4xl font-extrabold dark:text-white pt-10 pl-10">
