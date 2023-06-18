@@ -22,9 +22,10 @@ export const authOptions: AuthOptions = {
     async signIn({ user, account, email,profile }) {
       if (account?.provider == "google") {
         const { access_token, id_token } = account;
-        console.log(account)
-        console.log(email)
+        // console.log(account)
+        // console.log(email)
         console.log(user)
+        console.log(process.env.DJANGOURL)
         try {
           const response = await axios.post<TokenResponse>(
             process.env.DJANGOURL + "/api/social/google/",
@@ -37,7 +38,7 @@ export const authOptions: AuthOptions = {
           const tokken = response.data;
           user.accessToken = tokken.access;
           // console.log(user);
-          console.log("GAAA");
+          // console.log("GAAA");
           return true;
         } catch (error) {
           console.log("NOOO")
