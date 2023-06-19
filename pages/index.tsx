@@ -261,6 +261,7 @@ function downloadFile(url:string, fileName:string) {
   }
 
   async function getReporte(){
+    console.log(actualData.map(ele=>ele.evaluadores).flat())
     const pertinente = actualData.map(ele=>ele.evaluadores).flat().filter(ele2=>ele2.name == "Pertinente").map(ele3=>ele3.grade).reduce((a,b)=>a+b)
     const congruencia = actualData.map(ele=>ele.evaluadores).flat().filter(ele2=>ele2.name == "Congruencia").map(ele3=>ele3.grade).reduce((a,b)=>a+b)
     const suficiencia = actualData.map(ele=>ele.evaluadores).flat().filter(ele2=>ele2.name == "Suficiencia").map(ele3=>ele3.grade).reduce((a,b)=>a+b)
