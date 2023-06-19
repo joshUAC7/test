@@ -34,6 +34,7 @@ export const authOptions: AuthOptions = {
               // id_token:id_token
             }
           );
+          console.log(response)
           
           const tokken = response.data;
           user.accessToken = tokken.access;
@@ -42,7 +43,7 @@ export const authOptions: AuthOptions = {
           return true;
         } catch (error) {
           console.log("NOOO")
-          // console.log(error)
+          console.log(error)
 
           return false;
         }
@@ -63,7 +64,7 @@ export const authOptions: AuthOptions = {
       return session;
     },
     async redirect({ url, baseUrl }) {
-      console.log(url)
+      // console.log(url)
     // Allows relative callback URLs
     // if (url.startsWith("/")) return `${baseUrl}${url}`
     // // Allows callback URLs on the same origin

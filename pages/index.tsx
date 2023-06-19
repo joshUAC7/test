@@ -44,6 +44,7 @@ export default function Home({ posts, programa,DJANGOURL }: Props) {
   const [actualData, setActualData] = useState<dataStore[]>((): dataStore[] => {
     return convertData(posts);
   });
+  // console.log(actualData)
   const mainData = programa.data;
   const [programa1, setPrograma1] = useState("Pregrado");
   const [facultad, setFacultad] = useState("Ciencias y Humanidades");
@@ -400,7 +401,8 @@ export async function getStaticProps({ params }: Params) {
     ga.Order(ga.node.firstChild!!, 1, null);
 
     let results = ga.visitorGetContent(ga.node);
-    // console.log(ga.visitorGetNro(ga.node))
+    // console.log("GAAA")
+    // console.log(ga.visitorGetEvaluadores(ga.node))
     return {
       title: results[0]["message"],
       message: results[1]["message"],

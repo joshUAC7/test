@@ -52,6 +52,7 @@ while ((event = walker.next())) {
       case "text":{
         if(node.parent?.type == "paragraph"){
           if(flag1 && flag2){
+              console.log(node.literal!!)
               results.push(node.literal!!)
           }
         }
@@ -70,6 +71,15 @@ while ((event = walker.next())) {
           }
         }
       }
+      case "paragraph":{
+          if(node.parent?.parent?.type == "heading" && node.parent?.parent?.level == 2){
+          if(node.parent.parent.firstChild?.literal?.trim() == "Nro"){
+            flag1 = false
+          }else{
+            flag1 = true
+          }
+        }
+        }
       break
     }
 }
