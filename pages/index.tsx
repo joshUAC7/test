@@ -261,13 +261,20 @@ function downloadFile(url:string, fileName:string) {
   }
 
   async function getReporte(){
+    const pertinente = actualData.map(ele=>ele.evaluadores.filter(ele2=>ele2.name == "Pertinente").map(ele3=>ele3.grade).reduce((a,b)=>a+b))
+    const congruencia = actualData.map(ele=>ele.evaluadores.filter(ele2=>ele2.name == "Congruencia").map(ele3=>ele3.grade).reduce((a,b)=>a+b))
+    const suficiencia = actualData.map(ele=>ele.evaluadores.filter(ele2=>ele2.name == "Suficiencia").map(ele3=>ele3.grade).reduce((a,b)=>a+b))
+    console.log(pertinente)
     try{
         const response = await axios.post(DJANGOURL+"/api/reporte/",{
         programa1,
         facultad,
         programa2,
         resoluciones,
-        actualData
+        actualData,
+        pertinente,
+        congruencia,
+        suficiencia
       },{
           responseType:'blob'
         })
@@ -393,7 +400,7 @@ function downloadFile(url:string, fileName:string) {
                   <button
                     type="button"
                     className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                    onClick={() => setOpen(false)}
+                    onClick={getReporte}
                     ref={cancelButtonRef}
                   >
 
