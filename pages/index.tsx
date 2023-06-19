@@ -236,9 +236,9 @@ function downloadFile(url:string, fileName:string) {
       URL.revokeObjectURL(href);
     });
 };
-  function getInstrumento(){
+  async function getInstrumento(){
     try{
-      const ga = axios.get(DJANGOURL+"/api/instrumento/",{
+      const ga = await axios.get(DJANGOURL+"/api/instrumento/",{
         responseType:'blob'
       })
       console.log(ga)
@@ -257,7 +257,9 @@ function downloadFile(url:string, fileName:string) {
         programa2,
         resoluciones,
         actualData
-      })
+      },{
+          responseType:'blob'
+        })
       console.log(ga)
     }
     catch(err){
