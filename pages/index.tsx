@@ -241,6 +241,7 @@ function downloadFile(url:string, fileName:string) {
       const ga = axios.get(DJANGOURL+"/api/instrumento/",{
         responseType:'blob'
       })
+      console.log(ga)
     }
     catch(err)
   {
