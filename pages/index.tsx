@@ -238,10 +238,21 @@ function downloadFile(url:string, fileName:string) {
 };
   async function getInstrumento(){
     try{
-      const ga = await axios.get(DJANGOURL+"/api/instrumento/",{
+      const response = await axios.get(DJANGOURL+"/api/instrumento/",{
         responseType:'blob'
       })
-      console.log(ga)
+      const href = URL.createObjectURL(response.data);
+
+    // create "a" HTML element with href to file & click
+    const link = document.createElement('a');
+    link.href = href;
+    link.setAttribute('download', 'file.pdf'); //or any other extension
+    document.body.appendChild(link);
+    link.click();
+
+    // clean up "a" element & remove ObjectURL
+    document.body.removeChild(link);
+    URL.revokeObjectURL(href);
     }
     catch(err)
   {
