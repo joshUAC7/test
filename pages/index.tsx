@@ -259,7 +259,50 @@ function downloadFile(url:string, fileName:string) {
 
     }
   }
+async function getInforme(){
+    console.log(actualData.map(ele=>ele.evaluadores).flat())
+    const pertinente = actualData.map(ele=>ele.evaluadores).flat().filter(ele2=>ele2.name == "Pertinente").map(ele3=>ele3.grade).reduce((a,b)=>a+b)
+    const congruencia = actualData.map(ele=>ele.evaluadores).flat().filter(ele2=>ele2.name == "Congruencia").map(ele3=>ele3.grade).reduce((a,b)=>a+b)
+    const suficiencia = actualData.map(ele=>ele.evaluadores).flat().filter(ele2=>ele2.name == "Suficiencia").map(ele3=>ele3.grade).reduce((a,b)=>a+b)
+    console.log(pertinente)
+    const actuallyData = actualData.map(ele=>
+    {const ga = ele.evaluadores.map(ele2=>[ele2.name,ele2.grade])
+        return Object.fromEntries(ga)
+      }
+    )
+    console.log(actuallyData)
+    try{
+        const response = await axios.post(DJANGOURL+"/api/informe/",{
+        programa1,
+        facultad,
+        programa2,
+        resoluciones,
+        actualData:actuallyData,
+        pertinente,
+        congruencia,
+        suficiencia
+      },{
+          responseType:'blob'
+        })
+      const href = URL.createObjectURL(response.data);
 
+    // create "a" HTML element with href to file & click
+    const link = document.createElement('a');
+    link.href = href;
+    link.setAttribute('download', 'informe.docx'); //or any other extension
+    document.body.appendChild(link);
+    link.click();
+
+    // clean up "a" element & remove ObjectURL
+    document.body.removeChild(link);
+    URL.revokeObjectURL(href);
+
+    }
+    catch(err){
+
+    }
+
+  }
   async function getReporte(){
     console.log(actualData.map(ele=>ele.evaluadores).flat())
     const pertinente = actualData.map(ele=>ele.evaluadores).flat().filter(ele2=>ele2.name == "Pertinente").map(ele3=>ele3.grade).reduce((a,b)=>a+b)
@@ -284,7 +327,7 @@ function downloadFile(url:string, fileName:string) {
     // create "a" HTML element with href to file & click
     const link = document.createElement('a');
     link.href = href;
-    link.setAttribute('download', 'file.pdf'); //or any other extension
+    link.setAttribute('download', 'filee.docx'); //or any other extension
     document.body.appendChild(link);
     link.click();
 
@@ -383,7 +426,7 @@ function downloadFile(url:string, fileName:string) {
                   <button
                     type="button"
                     className="mt-3 inline-flex w-full justify-center rounded-md bg-green-300 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                    onClick={getReporte}
+                    onClick={getInforme}
                     ref={cancelButtonRef}
                   >
 <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
